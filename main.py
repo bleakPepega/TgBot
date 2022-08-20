@@ -81,11 +81,14 @@ def choose_theme(message):
     @bot.message_handler(content_types=['text'])
     def answer_on_theme(message1):
         for j in range(len(all_results)):
-            print(message1)
             print(all_results[i][0])
             if message1.text == all_results[i][0]:
                 print("ayaya")
-                bot.send_message(message.chat.id, task[i][0])
+                bot.send_message(message.chat.id, all_results[i][1])
+            if message1.text == all_results[i][2]:
+                bot.send_message(message.chat.id, " right")
+                break
+
 
 
 # def main():
